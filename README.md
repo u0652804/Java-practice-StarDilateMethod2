@@ -1,7 +1,12 @@
-# Java-practice-Print "a1" ~ "z1"
+# Java-practice-StarDilateMethod2
 
 ### Problem
-有一String為"a,b,c,d,e,f,g..."，請分別列印出"a1"、"b1"、"c1"...
+請用程式畫出下列圖型
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
 
 ### output
 ![demo](/image/demo.png)
