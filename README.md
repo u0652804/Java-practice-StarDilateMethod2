@@ -2,11 +2,8 @@
 
 ### Problem
 請用程式畫出下列圖型
-    *
-   * *
-  * * *
- * * * *
-* * * * *
+
+![demo](/image/demo.png)
 
 ### output
 ![demo](/image/demo.png)
