@@ -9,7 +9,7 @@
 ![demo](/image/demo.png)
 
 ### Java code
-- dilate
+- print stars
 ```sh
 	public void printStars(int layerNum) {
 		
@@ -47,7 +47,7 @@
 	}
 ```
 
-- dilate
+- dilate method
 
 ```sh
 	public char[] dilater(char[] kernal, char[] transData ,char[] original)
