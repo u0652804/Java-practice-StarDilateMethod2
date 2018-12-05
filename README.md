@@ -9,20 +9,41 @@
 ![demo](/image/demo.png)
 
 ### Java code
+- dilate
 		
-		String str = "";
+	public char[] dilater(char[] kernal, char[] transData ,char[] original)
+	{
+		char[] out = new char[original.length];
+		int[] neighbors = new int[kernal.length];
 		
-		// init. str = "a,"~"z,"
-		for(char i = 'a'; i <= 'z'; i ++)
-			if(i == 'z')
-				str = str + i + ' ';
-			else
-				str = str + i + ',';
+		//init. (copy data)
+		for(int i = 0; i < original.length; i ++)
+			out[i] = original[i];
+		
+		//init. neighbors
+		for(int i = 0; i < kernal.length; i ++)
+			neighbors[i] = i - kernal.length / 2;
+
+		//dilate
+		int kernalEdge = kernal.length / 2;
+		for(int i = kernalEdge; i < original.length - kernalEdge; i ++){
 			
-		System.out.print("The String : " + str + "\n");
+			//judge equal or not with kernal
+			boolean flag = true;
+			for(int j = 0; j < neighbors.length; j ++){
+				if(original[i + neighbors[j]] != kernal[j])
+					flag = false;
+			}
 			
-		System.out.println("print as below : ");
-		// print a1 b1 c1...
-		for(int i = 0; i < str.toCharArray().length; i += 2)
-			System.out.println(str.charAt(i) + "" + '1');
+			//trans data to out[]
+			if(flag)
+			{
+				for(int j = 0; j < neighbors.length; j ++){
+					out[i + neighbors[j]] = transData[j];
+				}
+			}
+		}
+		
+		return out;
+	}
 
