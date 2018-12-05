@@ -10,7 +10,46 @@
 
 ### Java code
 - dilate
+```sh
+	public void printStars(int layerNum) {
 		
+		char printData[] = new char[layerNum * 2 - 1];
+		
+		//init. printdata
+		for(int i = 0; i < printData.length; i ++){
+			if(i == layerNum - 1)
+				printData[i] = '*';
+			else
+				printData[i] = ' ';
+		}
+		
+		//print first row
+		for(int j = 0; j < printData.length; j ++)
+			System.out.print(printData[j]);
+		System.out.println();
+		
+		char[] kernal1 = {' ', '*', ' '};
+		char[] kernal2 = {'*', ' ', '*'};
+		
+		
+		// use kernal1 trans data to kernal2
+		for(int i = 0; i < layerNum - 1; i ++)
+		{
+			//dilate
+			printData = dilater(kernal1, kernal2, printData);
+			
+			//print row
+			for(int j = 0; j < printData.length; j ++)
+				System.out.print(printData[j]);		
+			System.out.println();
+		}
+		
+	}
+```
+
+- dilate
+
+```sh
 	public char[] dilater(char[] kernal, char[] transData ,char[] original)
 	{
 		char[] out = new char[original.length];
@@ -46,4 +85,6 @@
 		
 		return out;
 	}
+```
+
 
